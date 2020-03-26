@@ -45,10 +45,6 @@ class AlienInvasion:
             
             self._update_screen()
 
-            # Make the most recently drawn screen visible
-            # Runs faster when this is called here instead of _update_screen()
-            pygame.display.flip()
-            
 
     # Watch for keyboard and mouse events
     def _check_events(self):
@@ -126,6 +122,9 @@ class AlienInvasion:
         for bullet in self.bullets.sprites():
             bullet.draw_bullet()
         self.aliens.draw(self.screen)
+
+        # Make the most recently drawn screen visible
+        pygame.display.flip()
 
 
     # Create the fleet of aliens
